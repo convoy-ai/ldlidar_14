@@ -1,0 +1,14 @@
+<launch>
+
+<arg name="namespace" default="" />
+
+<node name = "LD14" pkg = "ldlidar_14" type = "ldlidar" output = "screen">
+  <param name="port_name" value="/dev/wheeltec_lidar"/>
+  <param name="product" value="LD14" />
+  <param name="laser_frame_id" value="$(arg namespace)/laser_link" />
+  <param name="scan_topic" value="/$(arg namespace)/scan" />
+  
+  <!--  <remap from="/LD14/LD14/LDLiDAR" to="$(arg namespace)/scan"/> -->
+
+</node>
+</launch>
